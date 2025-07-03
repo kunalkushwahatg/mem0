@@ -108,8 +108,7 @@ The system follows a sophisticated 3-phase architecture:
 3. **Update** (`update.py`): Intelligent memory management with conflict resolution
 4. **OllamaLLM** (`ollama_wrapper.py`): LangChain-based wrapper for Ollama API integration
 5. **MemoryAwareChatbot** (`chat.py`): Main orchestrator coordinating all components
-6. **VectorDB** (`vectordb.py`): Specialized vector database utilities
-7. **Prompts** (`prompts.py`): Centralized prompt templates for consistency
+6. **Prompts** (`prompts.py`): Centralized prompt templates for consistency
 
 ### Memory System
 
@@ -129,7 +128,6 @@ mem0/
 ├── database.py          # Memory storage and FAISS vector operations
 ├── extraction.py        # Memory extraction logic with context assembly
 ├── update.py            # Memory update phase with intelligent operations
-├── vectordb.py          # Vector database utilities and operations
 ├── prompts.py           # Centralized prompt templates
 ├── memories.json        # Stored memories with metadata
 ├── message.json         # Conversation history and context
@@ -166,140 +164,3 @@ The system supports four types of memory operations:
 - **UPDATE**: Enhance existing memories with additional details
 - **DELETE**: Remove outdated or incorrect information
 - **NOOP**: No operation needed (information already exists or irrelevant)
-
-## Troubleshooting
-
-### Ollama Connection Issues
-```
-❌ Error generating response: Connection refused
-```
-**Solution**: Make sure Ollama is running with `ollama serve`
-
-### Model Not Found
-```
-❌ Error: model 'qwen2.5:3b-instruct' not found
-```
-**Solution**: Pull the model with `ollama pull qwen2.5:3b-instruct`
-
-### LangChain Import Issues
-```
-❌ ImportError: No module named 'langchain_community'
-```
-**Solution**: Install LangChain dependencies with `pip install -r requirements.txt`
-
-### JSON Parsing Errors
-```
-❌ JSONDecodeError: Expecting value
-```
-**Solution**: The system includes robust JSON parsing with fallbacks. Check LLM responses and prompt formatting.
-
-### Vector Index Issues
-```
-❌ Error loading vector index
-```
-**Solution**: Delete `memory_index.faiss` and `memory_embeddings.json` to rebuild the vector database.
-
-### Memory Loading Issues
-```
-❌ Error loading memories
-```
-**Solution**: Check if JSON files exist and are valid. Delete corrupted files to reset.
-
-## Advanced Usage
-
-### Memory Pipeline Testing
-
-```python
-from extraction import Extraction
-from update import UpdatePhase
-from database import Database
-from ollama_wrapper import OllamaLLM
-
-# Initialize components
-db = Database()
-llm = OllamaLLM(model_name="qwen2.5:3b-instruct", temperature=0.3)
-
-# Test extraction
-extractor = Extraction(llm, db)
-memories = extractor.extract_memories("conv_id", "user message", "assistant response")
-
-# Test update phase
-updater = UpdatePhase(llm, db)
-results = updater.process_extracted_memories(memories)
-```
-
-### Custom Memory Addition
-
-```python
-from database import Database
-
-db = Database()
-db.add_memory("User prefers dark theme in applications")
-```
-
-### Advanced Memory Search
-
-```python
-# Search with custom parameters
-results = db.similarity_search("user interface preferences", k=10)
-for result in results:
-    print(f"Score: {result['score']:.3f}")
-    print(f"Content: {result['content']}")
-    print(f"Memory ID: {result['memory_id']}")
-```
-
-### Batch Memory Operations
-
-```python
-# Batch import with automatic update detection
-from update import UpdatePhase
-
-memories = [
-    "User is a software developer",
-    "User prefers Python for data science", 
-    "User works remotely from home"
-]
-
-updater = UpdatePhase(llm, db)
-results = updater.process_extracted_memories(memories)
-```
-
-### Custom LLM Configuration
-
-```python
-# Use different models for different tasks
-chat_llm = OllamaLLM(model_name="qwen2.5:7b-instruct", temperature=0.7)
-extraction_llm = OllamaLLM(model_name="qwen2.5:3b-instruct", temperature=0.3)
-
-chatbot = MemoryAwareChatbot(model_name="qwen2.5:7b-instruct")
-```
-
-## Performance & Scalability
-
-- **Memory Efficiency**: FAISS indexing for fast similarity search even with large memory stores
-- **Incremental Updates**: Only processes new memories without rebuilding entire index
-- **Configurable Parameters**: Adjustable similarity thresholds and context window sizes
-- **Error Recovery**: Robust error handling with graceful fallbacks
-- **Model Flexibility**: Support for different Ollama models with varying capabilities
-
-## Dependencies
-
-Current requirements include:
-- `requests>=2.31.0` - HTTP requests for Ollama API
-- `numpy>=1.24.0` - Numerical computations for embeddings
-- `faiss-cpu>=1.7.4` - Vector similarity search
-- `langchain>=0.1.0` - LLM framework integration
-- `langchain-community>=0.0.10` - Community LLM providers
-
-## Contributing
-
-Feel free to submit issues and enhancement requests! Areas for contribution:
-- Additional LLM providers support
-- Enhanced memory extraction algorithms
-- Performance optimizations
-- UI/Web interface development
-- Testing and documentation improvements
-
-## License
-
-This project is open source and available under the MIT License.
