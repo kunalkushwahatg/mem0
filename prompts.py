@@ -2,7 +2,7 @@ from ast import List
 from typing import Dict
 
 
-def create_chat_prompt(self, user_message: str, memory_context: str, recent_context: str) -> str:
+def create_chat_prompt( user_message: str, memory_context: str, recent_context: str) -> str:
     full_prompt = """You are a helpful, friendly AI assistant with memory capabilities. You can remember information from previous conversations and use it to provide more personalized and contextual responses.
 
     When responding:
@@ -26,7 +26,7 @@ def create_chat_prompt(self, user_message: str, memory_context: str, recent_cont
     return full_prompt
 
 
-def form_extraction_prompt(self, summary, recent_messages, mt_1, mt):
+def form_extraction_prompt( summary, recent_messages, mt_1, mt):
         """
         Forms the prompt for the LLM, clearly directing it to extract facts
         only from the recent messages and the new message pair.
@@ -38,7 +38,7 @@ def form_extraction_prompt(self, summary, recent_messages, mt_1, mt):
         )
 
         # Start with the most relevant data for the task
-        prompt += "## Latest Conversation Exchange\n"
+        prompt += "## Lastest Conversation Exchange\n"
         prompt += f"User: {mt_1}\nAssistant: {mt}\n\n"
         prompt += "Latest conversation exchange END \n"
         prompt += "## Recent Conversation History (DO NOT EXTRACT FACTS FROM HERE - this is for overall context)\n"
@@ -75,7 +75,9 @@ def form_extraction_prompt(self, summary, recent_messages, mt_1, mt):
         
         return prompt
 
-def create_update_prompt(self, candidate_fact: str, similar_memories: List[Dict]) -> str:
+
+
+def create_update_prompt(candidate_fact: str, similar_memories) -> str:
         print("similar_memories:")
         print(similar_memories)
         prompt = f"""You are an intelligent memory management system designed to process new information into a knowledge base. Your task is to analyze a 'Candidate Fact' and compare it meticulously with a list of 'Existing Similar Memories' to determine the precise operation required.
@@ -141,10 +143,10 @@ def create_update_prompt(self, candidate_fact: str, similar_memories: List[Dict]
         """
         return prompt
 
-def create_summary_prompt(memories):
+def create_summary_prompt(memories_list):
     memories = "You are a summary writer that generates short and concise summary from existing memories"
     memories += "\n Memories start \n"
-    for memory in memories:
+    for memory in memories_list:
         memories += f"{memory['content']}\n"
     memories += "\n Memories End \n"
     memories += """
@@ -157,3 +159,5 @@ def create_summary_prompt(memories):
         f"{memories}\n\n"
         "Summary:"
     )
+
+    return prompt

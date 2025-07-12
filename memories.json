@@ -19,7 +19,6 @@
     "updated_date": "2025-06-30T10:15:00Z",
     "content": "Turned vegetarian in second year of college after visiting animal shelter during NSS activity, never looked back since then"
   },
-
   {
     "memory_id": "mem_006",
     "updated_date": "2025-06-30T10:25:00Z",
@@ -164,5 +163,35 @@
     "memory_id": "mem_035",
     "updated_date": "2025-07-03T23:42:15.162731",
     "content": "Extracted Facts:"
+  },
+  {
+    "memory_id": "mem_036",
+    "updated_date": "2025-07-12T16:04:42.198636",
+    "content": "Patient has a history of asthma and uses an inhaler as needed."
+  },
+  {
+    "memory_id": "mem_037",
+    "updated_date": "2025-07-12T16:19:13.944827",
+    "content": "User initiated a conversation with greetings."
+  },
+  {
+    "memory_id": "mem_038",
+    "updated_date": "2025-07-12T16:20:42.183631",
+    "content": "The name of the user's university is NITR."
+  },
+  {
+    "memory_id": "mem_039",
+    "updated_date": "2025-07-12T16:22:24.040719",
+    "content": "On 12-07-2025, the user visited the dentist."
+  },
+  {
+    "memory_id": "mem_040",
+    "updated_date": "2025-07-12T16:24:20.707301",
+    "content": "Kadane's Algorithm is used to find the maximum sum of a contiguous subarray within a one-dimensional array of numbers."
+  },
+  {
+    "memory_id": "mem_041",
+    "updated_date": "2025-07-12T16:34:33.221255",
+    "content": "User has been regularly visiting the dentist every month for health check-ups."
   }
 ]

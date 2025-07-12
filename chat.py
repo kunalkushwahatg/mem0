@@ -11,15 +11,17 @@ class MemoryAwareChatbot:
     
     def __init__(self, model_name="qwen2:7b"):
         self.llm = OllamaLLM(model_name)
+        
 
-        # Check Ollama connection
         if not self.llm.check_connection():
             print("⚠️  Warning: Cannot connect to Ollama. Make sure it's running with 'ollama serve'")
         
         self.db = Database()
+        
         self.extractor = Extraction(self.llm, self.db)
         self.conversation_history = []
         self.update_phase = UpdatePhase(self.llm, self.db)
+
         
         
         # Initialize vector database if not exists
@@ -28,7 +30,7 @@ class MemoryAwareChatbot:
             self.db.create_vector_database()
         
         print("✅ Chatbot initialized successfully!")
-        print(f"📚 Loaded {len(self.db.memories)} memories")
+        print(f"📚 Loaded memories")
         print(f"🤖 Using model: {model_name}")
     
     def _save_message_to_history(self, user_message, bot_response):
@@ -95,7 +97,7 @@ class MemoryAwareChatbot:
         # Build the complete prompt
         full_prompt = create_chat_prompt( user_message, memory_context, recent_context)
         
-        print(f"🤖 Generating response with context:\n{full_prompt}")
+        # print(f"🤖 Generating response with context:\n{full_prompt}")
         # Generate response
         try:
             response = self.llm.generate(full_prompt, temperature=0.7)

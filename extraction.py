@@ -21,6 +21,7 @@ class Extraction:
         self.messages_count = 0 
         self.db = db
         self.recency_window_m = recency_window_m
+
         self.generate_summary()
 
     def generate_summary(self):
@@ -31,9 +32,9 @@ class Extraction:
         # Takes memories content and passes to LLM to generate a summary
         prompt = create_summary_prompt(self.db.memories)
 
-
-        print(f"Generating Summary .............")
+        print(f"Generating Summary of past context please wait it takes time ......")
         summary = self.llm.predict(prompt) 
+
         self.db.conversation_summary = summary
         self.db.save_summary()
         print(f"Generated Summary: {summary}")
@@ -64,7 +65,6 @@ class Extraction:
         memories = self.llm.predict(prompt)
         if "<none>" in memories:
             return []
-        print(memories)
         if self.messages_count >= self.update_summary_after:
             # Update the summary after a certain number of messages
             self.generate_summary()
@@ -88,4 +88,5 @@ if __name__ == "__main__":
     extractor = Extraction(llm, db)
     mt = "Hi how are you doing today?"
     mt_1 = "hello i am doing great"
+    
     print(extractor.extract_memories(mt_1,mt))
