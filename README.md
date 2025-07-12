@@ -30,6 +30,9 @@ ollama serve
 
 # In another terminal, pull a model
 ollama pull qwen2.5:3b-instruct
+
+# run the model in other terminal
+ollama run qwen2.5:3b-instruct
 ```
 
 ### 2. Install Dependencies
