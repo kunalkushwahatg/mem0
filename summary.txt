@@ -1,1 +1,24 @@
-Coding journey began at NITR with C programming, excitement for 'Hello World' program marked the start. Valorant addiction during pandemic lockdown led to Diamond rank playing Sage and Omen, Bind being favorite map. Arsenal fan since college days, never missed a match during NITR years, gathered in hostel common room to watch Premier League. Turned vegetarian after visiting animal shelter during NSS activity, now exclusively eats paneer, dal, quinoa, Greek yogurt. React Native app project currently worked on reminds of final year Java Android app development at university. Valorant team chemistry with college friends persists post-graduation, Discord server 'NITR Radiants' for daily gaming sessions. Indian Super League followed religiously now, but Premier League remains first love. NITR Aarohan fest coding competitions nostalgia includes energy and enthusiasm from college technical events. Python learning sparked interest in data science, now working with pandas and matplotlib for personal analytics projects. Valorant rank progression took 2 years, similar dedication to mastering algorithms during competitive programming at university. Football knowledge expanded beyond watching, understanding tactics, formations, and transfer markets became obsession during college years. Vegetarian cooking skills improved significantly post-university, restaurant-quality dal makhani and palak paneer made from scratch possible. GitHub profile shows progression from college projects to professional work, first repository uploaded during third year at NITR. Valorant community formed second family, squad up every weekend with college batch mates who moved to different cities. Fantasy Premier League addiction started in final year, still maintains same league after 15+ years. Vegetarian diet philosophy strengthened over years, now advocates for plant-based nutrition among friends and family. Current tech stack includes React, Node.js, MongoDB, evolved from university days using C++, Java, MySQL. Valorant agent preferences evolved reflecting maturity in gaming and life. Best places to visit in Japan include Tokyo, Kyoto, Osaka with unique attractions blending traditional and modernity, vibrant street food scenes, lively entertainment districts.
+- Coding journey started at NITR with C programming.
+- Became addicted to Valorant during pandemic lockdown, reached Diamond rank playing Sage and Omen.
+- Arsenal fan since college days, never missed a match during NITR years.
+- Turned vegetarian in second year of college after visiting animal shelter.
+- Currently working on React Native app project, reminds him of final year Java Android app build.
+- Valorant team chemistry intact with college friends post graduation; Discord server 'NITR Radiants' for gaming sessions.
+- Follows Indian Super League but EPL is first love; Thierry Henry poster still hangs in home office.
+- Favorite vegetarian protein sources include paneer, dal, quinoa, Greek yogurt.
+- Nostalgic about Aarohan fest coding competitions at NITR.
+- Learning Python sparked interest in data science; now uses pandas and matplotlib for personal projects.
+- Valorant rank progression took 2 years, similar dedication to mastering algorithms during competitive programming.
+- Football knowledge expanded from watching to understanding tactics, formations, and transfer markets.
+- Vegetarian cooking skills improved significantly over years, can make restaurant-quality dishes.
+- GitHub profile shows progression from college projects to professional work; first repository uploaded in third year.
+- Valorant community became second family post-graduation.
+- Fantasy Premier League addiction started during final year; maintains the same league with college friends after 15+ years.
+- Vegetarian diet philosophy strengthened over years, now advocates for plant-based nutrition among friends and family.
+- Current tech stack includes React, Node.js, MongoDB; evolved from C++, Java, MySQL in college days.
+- Valorant mechanics training inspired disciplined study schedule; 1 hour daily aim training and deathmatch routine.
+- Football analysis hobby grew to understanding xG statistics, heat maps, and tactical breakdowns.
+- Vegetarian meal prep strategy includes batch cooking lentils, quinoa salads, protein smoothies for busy work weeks.
+- NITR library Level 3 was coding sanctuary during placement preparation; solved over 500 LeetCode problems in that corner desk.
+- Open source contributions started during final semester; first pull request fixed documentation bug in popular Python library.
+- Valorant agent preferences evolved from duelist to controller/sentinel player, reflects maturity in gaming and life.

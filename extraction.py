@@ -22,7 +22,7 @@ class Extraction:
         self.db = db
         self.recency_window_m = recency_window_m
 
-        self.generate_summary()
+        #self.generate_summary()
 
     def generate_summary(self):
         """
@@ -56,13 +56,14 @@ class Extraction:
         """
 
         summary, recent_messages = self.assemble_context()
-
+        
         # Step 2: Form prompt
         prompt = form_extraction_prompt(summary, recent_messages, mt_1, mt)
-
+        print(prompt)
         # Step 3: LLM extraction (Ollama model)
         # If your LLM is async, use: memories = await self.llm.invoke(prompt)
         memories = self.llm.predict(prompt)
+        print(memories)
         if "<none>" in memories:
             return []
         if self.messages_count >= self.update_summary_after:
@@ -86,7 +87,8 @@ if __name__ == "__main__":
     db = Database()
     llm = OllamaLLM(model_name="qwen2:7b", temperature=0.3)
     extractor = Extraction(llm, db)
-    mt = "Hi how are you doing today?"
-    mt_1 = "hello i am doing great"
+    mt = "I visited taj mahal last year what where is it at?"
+    mt_1 = "taj mahal is in agra"
     
     print(extractor.extract_memories(mt_1,mt))
+

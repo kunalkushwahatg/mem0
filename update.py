@@ -156,11 +156,11 @@ if __name__ == "__main__":
     extractor = Extraction(llm, db)
 
     conversation_id = "12345"
-    mt1 = "I am searching for a trip to japan so tell me about the best places to visit in japan"
-    mt = "The best places to visit in Japan include Tokyo, Kyoto, and Osaka. Each city offers a unique blend of traditional and modern attractions."
 
+    mt = "I visited taj mahal last year what where is it at?"
+    mt_1 = "taj mahal is in agra"
     print("🔄 Extracting memories from conversation...")
-    memories = extractor.extract_memories( mt1, mt)
+    memories = extractor.extract_memories( mt_1, mt)
     print(f"📚 Extracted Memories: {memories}")
     if memories == []:
         print("No new memories extracted.")
