@@ -122,6 +122,11 @@ The system follows a sophisticated 3-phase architecture:
 - **Updates**: Intelligent memory operations to prevent redundancy and maintain accuracy
 - **Conflict Resolution**: Automatic handling of contradictory or duplicate information
 
+#### Database structure
+![Database](images/database.png)
+
+
+
 ## File Structure
 
 ```
@@ -139,6 +144,8 @@ mem0/
 ├── memory_index.faiss   # FAISS vector index for similarity search
 ├── requirements.txt     # Python dependencies including LangChain
 ├── setup.py            # Setup script with dependency checking
+├── images/              # Directory for architecture and demo images
+│   ├── database.png         # System database diagram
 └── README.md           # This file
 ```
 

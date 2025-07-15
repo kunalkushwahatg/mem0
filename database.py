@@ -89,7 +89,6 @@ class Database:
                         'content': content,
                         'index_position': len(embeddings_list) - 1
                     }
-                    print(f"Added embedding for {memory_id}")
         
         # Add all embeddings to FAISS index
             if embeddings_list:
