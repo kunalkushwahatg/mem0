@@ -122,9 +122,14 @@ The system follows a sophisticated 3-phase architecture:
 - **Updates**: Intelligent memory operations to prevent redundancy and maintain accuracy
 - **Conflict Resolution**: Automatic handling of contradictory or duplicate information
 
-#### Database structure
+### Architecture Diagram
+![Pipeline](images/pipeline.png)
+
+### Database structure
 ![Database](images/database.png)
 
+### Extraction Phase
+![Extraction](images/extraction_phase.png)
 
 
 ## File Structure
